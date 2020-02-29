@@ -43,6 +43,7 @@ object frmCalculator: TfrmCalculator
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = BackButtonClick
     end
     object ButtonC: TSpeedButton
       Left = 192
@@ -221,6 +222,7 @@ object frmCalculator: TfrmCalculator
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = ButtonPntClick
     end
     object ButtonDiv: TSpeedButton
       Left = 162
@@ -234,6 +236,7 @@ object frmCalculator: TfrmCalculator
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = ButtonDivClick
     end
     object ButtonMul: TSpeedButton
       Left = 162
@@ -247,6 +250,7 @@ object frmCalculator: TfrmCalculator
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = ButtonMulClick
     end
     object ButtonSub: TSpeedButton
       Left = 162
@@ -260,6 +264,7 @@ object frmCalculator: TfrmCalculator
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = ButtonSubClick
     end
     object ButtonAdd: TSpeedButton
       Left = 162
@@ -273,6 +278,7 @@ object frmCalculator: TfrmCalculator
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = ButtonAddClick
     end
     object ButtonSqrt: TSpeedButton
       Left = 200

@@ -249,7 +249,7 @@ end;
 
 procedure TfrmCalculator.ButtonAddClick(Sender: TObject);
 begin
-  CalcKey('+');
+    CalcKey('+');
 end;
 
 procedure TfrmCalculator.ButtonResultClick(Sender: TObject);
