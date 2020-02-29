@@ -1,2 +1,3 @@
 # Calculator
-Delphi 10 Calculator
+
+### Calculator implemented with graphical interface in Delphi 10 Seattle.
