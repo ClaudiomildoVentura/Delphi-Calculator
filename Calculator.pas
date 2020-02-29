@@ -52,6 +52,15 @@ type
     PasteItem: TMenuItem;
   private
     { Private declarations }
+    FStatus: TRxCalcState;
+    FOperator: Char;
+    FOperand: Double;
+    FMemory: Double;
+    procedure CalcKey(Key: Char);
+    procedure Clear;
+    procedure Error;
+    procedure SetDisplay(R: Double);
+    function GetDisplay: Double;
   public
     { Public declarations }
   end;
