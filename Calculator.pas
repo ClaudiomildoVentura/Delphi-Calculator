@@ -72,4 +72,16 @@ implementation
 
 {$R *.dfm}
 
+const
+  VK_0 = $30;
+  VK_1 = $31;
+  VK_2 = $32;
+  VK_3 = $33;
+  VK_4 = $34;
+  VK_5 = $35;
+  VK_6 = $36;
+  VK_7 = $37;
+  VK_8 = $38;
+  VK_9 = $39;
+
 end.
