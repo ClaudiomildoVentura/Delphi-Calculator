@@ -87,8 +87,75 @@ const
   { TfrmCalculator }
 
 procedure TfrmCalculator.CalcKey(Key: Char);
+var
+  R: Double;
 begin
-
+  Key := UpCase(Key);
+  if (FStatus = csError) and (Key <> 'C') then
+    Key := ' ';
+  if Key = FormatSettings.DecimalSeparator then
+  begin
+    CheckFirst;
+    if Pos(FormatSettings.DecimalSeparator, DisplayLabel.Caption) = 0 then
+      DisplayLabel.Caption := DisplayLabel.Caption +
+        FormatSettings.DecimalSeparator;
+  end
+  else
+    case Key of
+      '0' .. '9':
+        begin
+          CheckFirst;
+          if DisplayLabel.Caption = '0' then
+            DisplayLabel.Caption := '';
+          if Pos('E', DisplayLabel.Caption) = 0 then
+            DisplayLabel.Caption := DisplayLabel.Caption + Key;
+        end;
+      #8:
+        begin
+          CheckFirst;
+          if (Length(DisplayLabel.Caption) = 1) or
+            ((Length(DisplayLabel.Caption) = 2) and
+            (DisplayLabel.Caption[1] = '-')) then
+            DisplayLabel.Caption := '0'
+          else
+            DisplayLabel.Caption := Copy(DisplayLabel.Caption, 1,
+              Length(DisplayLabel.Caption) - 1);
+        end;
+      '_':
+        SetDisplay(-GetDisplay);
+      '+', '-', '*', '/', '=', '%', #13:
+        begin
+          if FStatus = csValid then
+          begin
+            FStatus := csFirst;
+            R := GetDisplay;
+            if Key = '%' then
+              case FOperator of
+                '+', '-':
+                  R := FOperand * R / 100;
+                '*', '/':
+                  R := R / 100;
+              end;
+            case FOperator of
+              '+':
+                SetDisplay(FOperand + R);
+              '-':
+                SetDisplay(FOperand - R);
+              '*':
+                SetDisplay(FOperand * R);
+              '/':
+                if R = 0 then
+                  Error
+                else
+                  SetDisplay(FOperand / R);
+            end;
+          end;
+          FOperator := Key;
+          FOperand := GetDisplay;
+        end;
+      'C':
+        Clear;
+    end;
 end;
 
 procedure TfrmCalculator.Clear;
