@@ -31,8 +31,6 @@ object frmCalculator: TfrmCalculator
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 242
-    ExplicitHeight = 159
     object BackButton: TSpeedButton
       Left = 146
       Top = 34
@@ -58,6 +56,7 @@ object frmCalculator: TfrmCalculator
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = ButtonCClick
     end
     object ButtonMC: TSpeedButton
       Left = 6
@@ -71,6 +70,7 @@ object frmCalculator: TfrmCalculator
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = ButtonMCClick
     end
     object ButtonMR: TSpeedButton
       Left = 6
@@ -84,6 +84,7 @@ object frmCalculator: TfrmCalculator
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = ButtonMRClick
     end
     object ButtonMS: TSpeedButton
       Left = 6
@@ -97,6 +98,7 @@ object frmCalculator: TfrmCalculator
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = ButtonMSClick
     end
     object ButtonMP: TSpeedButton
       Left = 6
@@ -110,6 +112,7 @@ object frmCalculator: TfrmCalculator
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = ButtonMPClick
     end
     object Button7: TSpeedButton
       Tag = 7
@@ -134,6 +137,7 @@ object frmCalculator: TfrmCalculator
       Width = 36
       Height = 22
       Caption = '1'
+      OnClick = Button1Click
     end
     object Button0: TSpeedButton
       Left = 48
@@ -141,6 +145,7 @@ object frmCalculator: TfrmCalculator
       Width = 36
       Height = 22
       Caption = '0'
+      OnClick = Button0Click
     end
     object Button8: TSpeedButton
       Tag = 8
@@ -178,6 +183,7 @@ object frmCalculator: TfrmCalculator
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = ButtonPMClick
     end
     object Button9: TSpeedButton
       Tag = 9
@@ -274,6 +280,7 @@ object frmCalculator: TfrmCalculator
       Width = 36
       Height = 22
       Caption = 'sqrt'
+      OnClick = ButtonSqrtClick
     end
     object ButtonPercent: TSpeedButton
       Left = 200
@@ -287,6 +294,7 @@ object frmCalculator: TfrmCalculator
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = ButtonPercentClick
     end
     object ButtonRev: TSpeedButton
       Left = 200
@@ -300,6 +308,7 @@ object frmCalculator: TfrmCalculator
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = ButtonRevClick
     end
     object ButtonResult: TSpeedButton
       Left = 200
@@ -313,6 +322,7 @@ object frmCalculator: TfrmCalculator
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
+      OnClick = ButtonResultClick
     end
     object OkButton: TSpeedButton
       Left = 48
@@ -418,6 +428,7 @@ object frmCalculator: TfrmCalculator
     end
   end
   object PopupMenu: TPopupMenu
+    OnPopup = PopupMenuPopup
     Left = 120
     Top = 28
     object CopyItem: TMenuItem
