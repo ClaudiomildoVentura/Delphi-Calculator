@@ -84,4 +84,32 @@ const
   VK_8 = $38;
   VK_9 = $39;
 
+  { TfrmCalculator }
+
+procedure TfrmCalculator.CalcKey(Key: Char);
+begin
+
+end;
+
+procedure TfrmCalculator.Clear;
+begin
+
+end;
+
+procedure TfrmCalculator.Error;
+begin
+  FStatus := csError;
+  DisplayLabel.Caption := 'Error';
+end;
+
+function TfrmCalculator.GetDisplay: Double;
+begin
+
+end;
+
+procedure TfrmCalculator.SetDisplay(R: Double);
+begin
+
+end;
+
 end.
