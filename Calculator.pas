@@ -50,6 +50,7 @@ type
     PopupMenu: TPopupMenu;
     CopyItem: TMenuItem;
     PasteItem: TMenuItem;
+    procedure CheckFirst;
   private
     { Private declarations }
     FStatus: TRxCalcState;
@@ -71,6 +72,7 @@ var
 implementation
 
 {$R *.dfm}
+{ TfrmCalculator }
 
 const
   VK_0 = $30;
@@ -83,8 +85,6 @@ const
   VK_7 = $37;
   VK_8 = $38;
   VK_9 = $39;
-
-  { TfrmCalculator }
 
 procedure TfrmCalculator.CalcKey(Key: Char);
 var
@@ -156,6 +156,15 @@ begin
       'C':
         Clear;
     end;
+end;
+
+procedure TfrmCalculator.CheckFirst;
+begin
+  if FStatus = csFirst then
+  begin
+    FStatus := csValid;
+    DisplayLabel.Caption := '0';
+  end;
 end;
 
 procedure TfrmCalculator.Clear;
