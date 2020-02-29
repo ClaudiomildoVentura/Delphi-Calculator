@@ -173,17 +173,22 @@ end;
 
 function TfrmCalculator.GetDisplay: Double;
 begin
-
+  if FStatus = csError then
+    Result := 0
+  else
+    Result := StrToFloat(Trim(DisplayLabel.Caption));
 end;
 
 procedure TfrmCalculator.SetDisplay(R: Double);
 var
   S: string;
 begin
-  {S := Format('%31.16f', [R]);}
-  S := Format('%31.10f', [R]);  { Alterado p/ 10 Casas Decimais }
-  while S[Length(S)] = '0' do Delete(S, Length(S), 1);
-  if S[Length(S)] = FormatSettings.DecimalSeparator then Delete(S, Length(S), 1);
+  { S := Format('%31.16f', [R]); }
+  S := Format('%31.10f', [R]); { Alterado p/ 10 Casas Decimais }
+  while S[Length(S)] = '0' do
+    Delete(S, Length(S), 1);
+  if S[Length(S)] = FormatSettings.DecimalSeparator then
+    Delete(S, Length(S), 1);
   DisplayLabel.Caption := Trim(S);
 end;
 
