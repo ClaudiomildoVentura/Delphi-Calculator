@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls,
-  Vcl.Menus;
+  Vcl.Menus, Clipbrd;
 
 type
   TRxCalcState = (csFirst, csValid, csError);
@@ -51,6 +51,31 @@ type
     CopyItem: TMenuItem;
     PasteItem: TMenuItem;
     procedure CheckFirst;
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure Button0Click(Sender: TObject);
+    procedure ButtonPntClick(Sender: TObject);
+    procedure ButtonDivClick(Sender: TObject);
+    procedure ButtonMulClick(Sender: TObject);
+    procedure ButtonSubClick(Sender: TObject);
+    procedure ButtonAddClick(Sender: TObject);
+    procedure ButtonResultClick(Sender: TObject);
+    procedure ButtonCClick(Sender: TObject);
+    procedure BackButtonClick(Sender: TObject);
+    procedure ButtonPMClick(Sender: TObject);
+    procedure ButtonPercentClick(Sender: TObject);
+    procedure ButtonRevClick(Sender: TObject);
+    procedure ButtonSqrtClick(Sender: TObject);
+    procedure ButtonMCClick(Sender: TObject);
+    procedure ButtonMRClick(Sender: TObject);
+    procedure ButtonMSClick(Sender: TObject);
+    procedure ButtonMPClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure CopyItemClick(Sender: TObject);
+    procedure PasteItemClick(Sender: TObject);
+    procedure PopupMenuPopup(Sender: TObject);
+    procedure OkButtonClick(Sender: TObject);
+    procedure CancelButtonClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
     FStatus: TRxCalcState;
@@ -85,6 +110,108 @@ const
   VK_7 = $37;
   VK_8 = $38;
   VK_9 = $39;
+
+procedure TfrmCalculator.BackButtonClick(Sender: TObject);
+begin
+  CalcKey(#8);
+end;
+
+procedure TfrmCalculator.Button0Click(Sender: TObject);
+begin
+    CalcKey(Char(TComponent(Sender).Tag + Ord('0')));
+end;
+
+procedure TfrmCalculator.ButtonAddClick(Sender: TObject);
+begin
+   CalcKey('+');
+end;
+
+procedure TfrmCalculator.ButtonCClick(Sender: TObject);
+begin
+  CalcKey('C');
+end;
+
+procedure TfrmCalculator.ButtonDivClick(Sender: TObject);
+begin
+  CalcKey('/');
+end;
+
+procedure TfrmCalculator.ButtonMCClick(Sender: TObject);
+begin
+   FMemory := 0.0;
+  MemoryLabel.Caption := '';
+end;
+
+procedure TfrmCalculator.ButtonMPClick(Sender: TObject);
+begin
+    if (FStatus = csValid) or (FStatus = csFirst) then begin
+    FStatus := csFirst;
+    FMemory := FMemory + GetDisplay;
+    if FMemory <> 0 then MemoryLabel.Caption := 'M'
+    else MemoryLabel.Caption := '';
+  end;
+end;
+
+procedure TfrmCalculator.ButtonMRClick(Sender: TObject);
+begin
+   if (FStatus = csValid) or (FStatus = csFirst) then begin
+    FStatus := csFirst;
+    CheckFirst;
+    SetDisplay(FMemory);
+  end;
+end;
+
+procedure TfrmCalculator.ButtonMSClick(Sender: TObject);
+begin
+   if (FStatus = csValid) or (FStatus = csFirst) then begin
+    FStatus := csFirst;
+    FMemory := GetDisplay;
+    if FMemory <> 0 then MemoryLabel.Caption := 'M'
+    else MemoryLabel.Caption := '';
+  end;
+end;
+
+procedure TfrmCalculator.ButtonMulClick(Sender: TObject);
+begin
+   CalcKey('*');
+end;
+
+procedure TfrmCalculator.ButtonPercentClick(Sender: TObject);
+begin
+  CalcKey('%');
+end;
+
+procedure TfrmCalculator.ButtonPMClick(Sender: TObject);
+begin
+   CalcKey('_');
+end;
+
+procedure TfrmCalculator.ButtonPntClick(Sender: TObject);
+begin
+   CalcKey(FormatSettings.DecimalSeparator);
+end;
+
+procedure TfrmCalculator.ButtonResultClick(Sender: TObject);
+begin
+   CalcKey('=');
+end;
+
+procedure TfrmCalculator.ButtonRevClick(Sender: TObject);
+begin
+  FStatus := csFirst;
+  if GetDisplay = 0 then Error else SetDisplay(1.0 / GetDisplay);
+end;
+
+procedure TfrmCalculator.ButtonSqrtClick(Sender: TObject);
+begin
+     FStatus := csFirst;
+  if GetDisplay < 0 then Error else SetDisplay(Sqrt(GetDisplay));
+end;
+
+procedure TfrmCalculator.ButtonSubClick(Sender: TObject);
+begin
+  CalcKey('-');
+end;
 
 procedure TfrmCalculator.CalcKey(Key: Char);
 var
@@ -158,6 +285,11 @@ begin
     end;
 end;
 
+procedure TfrmCalculator.CancelButtonClick(Sender: TObject);
+begin
+    ModalResult := mrCancel;
+end;
+
 procedure TfrmCalculator.CheckFirst;
 begin
   if FStatus = csFirst then
@@ -174,10 +306,55 @@ begin
   FOperator := '=';
 end;
 
+procedure TfrmCalculator.CopyItemClick(Sender: TObject);
+begin
+
+    Clipboard.AsText := DisplayLabel.Caption;
+end;
+
 procedure TfrmCalculator.Error;
 begin
   FStatus := csError;
   DisplayLabel.Caption := 'Error';
+end;
+
+procedure TfrmCalculator.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Action := caFree;
+end;
+
+procedure TfrmCalculator.FormCreate(Sender: TObject);
+begin
+   FMemory := 0.0;
+end;
+
+procedure TfrmCalculator.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  case Key of
+    VK_0 .. VK_9:
+      CalcKey(Char(Key));
+    VK_NUMPAD0 .. VK_NUMPAD9:
+      CalcKey(Char(Key - VK_NUMPAD0 + Ord('0')));
+    VK_BACK:
+      BackButtonClick(Self);
+    VK_ESCAPE:
+      Close;
+    VK_DELETE:
+      ButtonCClick(Self);
+    187, VK_RETURN:
+      ButtonResultClick(Self);
+    VK_DIVIDE:
+      ButtonDivClick(Self);
+    VK_MULTIPLY:
+      ButtonMulClick(Self);
+    VK_SUBTRACT:
+      ButtonSubClick(Self);
+    VK_ADD:
+      ButtonAddClick(Self);
+    188, 190, VK_DECIMAL:
+      ButtonPntClick(Self);
+  end;
 end;
 
 function TfrmCalculator.GetDisplay: Double;
@@ -186,6 +363,26 @@ begin
     Result := 0
   else
     Result := StrToFloat(Trim(DisplayLabel.Caption));
+end;
+
+procedure TfrmCalculator.OkButtonClick(Sender: TObject);
+begin
+    StrToFloat(Trim(DisplayLabel.Caption)); { to raise exception on error }
+  ModalResult := mrOk;
+end;
+
+procedure TfrmCalculator.PasteItemClick(Sender: TObject);
+begin
+    try
+    SetDisplay(StrToFloat(Trim(Clipboard.AsText)));
+  except
+    DisplayLabel.Caption := '0';
+  end;
+end;
+
+procedure TfrmCalculator.PopupMenuPopup(Sender: TObject);
+begin
+    PasteItem.Enabled := Clipboard.HasFormat(CF_TEXT);
 end;
 
 procedure TfrmCalculator.SetDisplay(R: Double);
