@@ -160,7 +160,9 @@ end;
 
 procedure TfrmCalculator.Clear;
 begin
-
+  FStatus := csFirst;
+  DisplayLabel.Caption := '0';
+  FOperator := '=';
 end;
 
 procedure TfrmCalculator.Error;
