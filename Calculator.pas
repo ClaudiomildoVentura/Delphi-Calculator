@@ -12,7 +12,7 @@ type
   TRxCalcState = (csFirst, csValid, csError);
 
 type
-  TfrmCalculator  = class(TForm)
+  TfrmCalculator = class(TForm)
     btn7: TButton;
     btn4: TButton;
     btn1: TButton;
@@ -30,10 +30,12 @@ type
     btn6: TButton;
     btn3: TButton;
     btnIgualdade: TButton;
+    procedure btnAdicaoClick(Sender: TObject);
 
   private
     { Private declarations }
-
+    FOperacao: String;
+    FTotal: Double;
   public
     { Public declarations }
   end;
@@ -44,5 +46,10 @@ var
 implementation
 
 {$R *.DFM}
+
+procedure TfrmCalculator.btnAdicaoClick(Sender: TObject);
+begin
+   FOperacao:= '+';
+end;
 
 end.
