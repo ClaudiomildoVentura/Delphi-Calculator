@@ -98,7 +98,7 @@ object frmCalculator: TfrmCalculator
     Text = '0'
   end
   object btn8: TButton
-    Left = 92
+    Left = 88
     Top = 75
     Width = 69
     Height = 25
@@ -107,7 +107,7 @@ object frmCalculator: TfrmCalculator
     OnClick = btnGeralClick
   end
   object btn5: TButton
-    Left = 92
+    Left = 88
     Top = 123
     Width = 69
     Height = 25
@@ -116,7 +116,7 @@ object frmCalculator: TfrmCalculator
     OnClick = btnGeralClick
   end
   object btn2: TButton
-    Left = 92
+    Left = 88
     Top = 170
     Width = 69
     Height = 25
@@ -125,7 +125,7 @@ object frmCalculator: TfrmCalculator
     OnClick = btnGeralClick
   end
   object btn0: TButton
-    Left = 92
+    Left = 88
     Top = 218
     Width = 69
     Height = 25
