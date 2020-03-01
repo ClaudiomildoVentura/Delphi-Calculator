@@ -49,6 +49,7 @@ object frmCalculator: TfrmCalculator
     Height = 25
     Caption = 'Limpar'
     TabOrder = 3
+    OnClick = btnLimparClick
   end
   object btnAdicao: TButton
     Left = 273

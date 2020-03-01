@@ -36,6 +36,7 @@ type
     procedure btnDividirClick(Sender: TObject);
     procedure btnGeralClick(Sender: TObject);
     procedure btnIgualdadeClick(Sender: TObject);
+    procedure btnLimparClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -69,6 +70,11 @@ end;
 procedure TfrmCalculator.btnIgualdadeClick(Sender: TObject);
 begin
   Calcular;
+end;
+
+procedure TfrmCalculator.btnLimparClick(Sender: TObject);
+begin
+  Limpar;
 end;
 
 procedure TfrmCalculator.btnAdicaoClick(Sender: TObject);
