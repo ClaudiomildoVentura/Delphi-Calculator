@@ -109,14 +109,10 @@ end;
 procedure TfrmCalculator.Calcular;
 begin
   case FOperacao of
-    '+':
-      FTotal := FTotal + StrToFloat(edtResultado.Text);
-    '-':
-      FTotal := FTotal - StrToFloat(edtResultado.Text);
-    '*':
-      FTotal := FTotal * StrToFloat(edtResultado.Text);
-    '/':
-      FTotal := FTotal / StrToFloat(edtResultado.Text);
+    '+': FTotal := FTotal + StrToFloat(edtResultado.Text);
+    '-': FTotal := FTotal - StrToFloat(edtResultado.Text);
+    '*': FTotal := FTotal * StrToFloat(edtResultado.Text);
+    '/': FTotal := FTotal / StrToFloat(edtResultado.Text);
   end;
   edtResultado.Text := FloatToStr(FTotal);
   FUltimoNumero := 0;
