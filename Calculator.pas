@@ -34,6 +34,7 @@ type
     procedure btnSubtracaoClick(Sender: TObject);
     procedure btnMultiplicarClick(Sender: TObject);
     procedure btnDividirClick(Sender: TObject);
+    procedure btnGeralClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -50,24 +51,30 @@ implementation
 
 {$R *.DFM}
 
+procedure TfrmCalculator.btnGeralClick(Sender: TObject);
+begin
+// TypeCasting para pegar todos os dados dos botões.
+  edtResultado.Text := edtResultado.Text + TButton(Sender).Caption;
+end;
+
 procedure TfrmCalculator.btnAdicaoClick(Sender: TObject);
 begin
-   FOperacao:= '+';
+  FOperacao := '+';
 end;
 
 procedure TfrmCalculator.btnDividirClick(Sender: TObject);
 begin
- FOperacao:= '/';
+  FOperacao := '/';
 end;
 
 procedure TfrmCalculator.btnMultiplicarClick(Sender: TObject);
 begin
- FOperacao:= '*';
+  FOperacao := '*';
 end;
 
 procedure TfrmCalculator.btnSubtracaoClick(Sender: TObject);
 begin
-  FOperacao:= '-';
+  FOperacao := '-';
 end;
 
 end.

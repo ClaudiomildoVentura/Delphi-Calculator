@@ -22,6 +22,7 @@ object frmCalculator: TfrmCalculator
     Height = 25
     Caption = '7'
     TabOrder = 0
+    OnClick = btnGeralClick
   end
   object btn4: TButton
     Left = 12
@@ -30,6 +31,7 @@ object frmCalculator: TfrmCalculator
     Height = 25
     Caption = '4'
     TabOrder = 1
+    OnClick = btnGeralClick
   end
   object btn1: TButton
     Left = 12
@@ -38,6 +40,7 @@ object frmCalculator: TfrmCalculator
     Height = 25
     Caption = '1'
     TabOrder = 2
+    OnClick = btnGeralClick
   end
   object btnLimpar: TButton
     Left = 12
@@ -99,6 +102,7 @@ object frmCalculator: TfrmCalculator
     Height = 25
     Caption = '8'
     TabOrder = 9
+    OnClick = btnGeralClick
   end
   object btn5: TButton
     Left = 96
@@ -107,6 +111,7 @@ object frmCalculator: TfrmCalculator
     Height = 25
     Caption = '5'
     TabOrder = 10
+    OnClick = btnGeralClick
   end
   object btn2: TButton
     Left = 96
@@ -115,6 +120,7 @@ object frmCalculator: TfrmCalculator
     Height = 25
     Caption = '2'
     TabOrder = 11
+    OnClick = btnGeralClick
   end
   object btn0: TButton
     Left = 96
@@ -123,6 +129,7 @@ object frmCalculator: TfrmCalculator
     Height = 25
     Caption = '0'
     TabOrder = 12
+    OnClick = btnGeralClick
   end
   object btn9: TButton
     Left = 179
@@ -131,6 +138,7 @@ object frmCalculator: TfrmCalculator
     Height = 25
     Caption = '9'
     TabOrder = 13
+    OnClick = btnGeralClick
   end
   object btn6: TButton
     Left = 179
@@ -139,6 +147,7 @@ object frmCalculator: TfrmCalculator
     Height = 25
     Caption = '6'
     TabOrder = 14
+    OnClick = btnGeralClick
   end
   object btn3: TButton
     Left = 179
@@ -147,6 +156,7 @@ object frmCalculator: TfrmCalculator
     Height = 25
     Caption = '3'
     TabOrder = 15
+    OnClick = btnGeralClick
   end
   object btnIgualdade: TButton
     Left = 179
