@@ -80,12 +80,14 @@ end;
 
 procedure TfrmCalculator.btnAdicaoClick(Sender: TObject);
 begin
+  FUltimoNumero := StrToFloat(edtResultado.Text);
   Calcular;
   FOperacao := '+';
 end;
 
 procedure TfrmCalculator.btnDividirClick(Sender: TObject);
 begin
+  FUltimoNumero := StrToFloat(edtResultado.Text);
   Calcular;
   FOperacao := '/';
 end;
@@ -99,6 +101,7 @@ end;
 
 procedure TfrmCalculator.btnSubtracaoClick(Sender: TObject);
 begin
+  FUltimoNumero := StrToFloat(edtResultado.Text);
   Calcular;
   FOperacao := '-';
 end;
