@@ -35,6 +35,7 @@ type
     procedure btnMultiplicarClick(Sender: TObject);
     procedure btnDividirClick(Sender: TObject);
     procedure btnGeralClick(Sender: TObject);
+    procedure btnIgualdadeClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -64,28 +65,33 @@ begin
   FUltimoNumero := StrToFloat(edtResultado.Text);
 end;
 
+procedure TfrmCalculator.btnIgualdadeClick(Sender: TObject);
+begin
+  Calcular;
+end;
+
 procedure TfrmCalculator.btnAdicaoClick(Sender: TObject);
 begin
+  Calcular;
   FOperacao := '+';
-  Calcular
 end;
 
 procedure TfrmCalculator.btnDividirClick(Sender: TObject);
 begin
+  Calcular;
   FOperacao := '/';
-  Calcular
 end;
 
 procedure TfrmCalculator.btnMultiplicarClick(Sender: TObject);
 begin
+  Calcular;
   FOperacao := '*';
-  Calcular
 end;
 
 procedure TfrmCalculator.btnSubtracaoClick(Sender: TObject);
 begin
+  Calcular;
   FOperacao := '-';
-  Calcular
 end;
 
 procedure TfrmCalculator.Calcular;

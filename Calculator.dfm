@@ -165,5 +165,6 @@ object frmCalculator: TfrmCalculator
     Height = 25
     Caption = '='
     TabOrder = 16
+    OnClick = btnIgualdadeClick
   end
 end
