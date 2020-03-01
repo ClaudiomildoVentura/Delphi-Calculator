@@ -92,6 +92,7 @@ end;
 
 procedure TfrmCalculator.btnMultiplicarClick(Sender: TObject);
 begin
+  FUltimoNumero := StrToFloat(edtResultado.Text);
   Calcular;
   FOperacao := '*';
 end;
