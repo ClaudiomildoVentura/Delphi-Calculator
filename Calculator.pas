@@ -41,7 +41,7 @@ type
 
   private
     { Private declarations }
-    FOperacao: String;
+    FOperacao: Char;
     FTotal: Double;
     FUltimoNumero: Double;
     procedure Calcular;
