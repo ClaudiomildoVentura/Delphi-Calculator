@@ -67,32 +67,41 @@ end;
 procedure TfrmCalculator.btnAdicaoClick(Sender: TObject);
 begin
   FOperacao := '+';
+  Calcular
 end;
 
 procedure TfrmCalculator.btnDividirClick(Sender: TObject);
 begin
   FOperacao := '/';
+  Calcular
 end;
 
 procedure TfrmCalculator.btnMultiplicarClick(Sender: TObject);
 begin
   FOperacao := '*';
+  Calcular
 end;
 
 procedure TfrmCalculator.btnSubtracaoClick(Sender: TObject);
 begin
   FOperacao := '-';
+  Calcular
 end;
 
 procedure TfrmCalculator.Calcular;
 begin
   case FOperacao of
-    '+':  FTotal := FTotal + StrToFloat(edtResultado.Text);
-    '-':  FTotal := FTotal - StrToFloat(edtResultado.Text);
-    '*':  FTotal := FTotal * StrToFloat(edtResultado.Text);
-    '/':  FTotal := FTotal / StrToFloat(edtResultado.Text);
+    '+':
+      FTotal := FTotal + StrToFloat(edtResultado.Text);
+    '-':
+      FTotal := FTotal - StrToFloat(edtResultado.Text);
+    '*':
+      FTotal := FTotal * StrToFloat(edtResultado.Text);
+    '/':
+      FTotal := FTotal / StrToFloat(edtResultado.Text);
   end;
   edtResultado.Text := FloatToStr(FTotal);
+  FUltimoNumero := 0;
 end;
 
 end.
