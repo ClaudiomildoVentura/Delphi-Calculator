@@ -72,6 +72,7 @@ object frmCalculator: TfrmCalculator
     Height = 25
     Caption = 'X'
     TabOrder = 6
+    OnClick = btnMultiplicarClick
   end
   object btnDividir: TButton
     Left = 273
