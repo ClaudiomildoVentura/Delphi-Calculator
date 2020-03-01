@@ -107,7 +107,7 @@ begin
       FTotal := FTotal / StrToFloat(edtResultado.Text);
   end;
   edtResultado.Text := FloatToStr(FTotal);
-  FUltimoNumero := 0;
+  FUltimoNumero := FTotal;
 end;
 
 end.
