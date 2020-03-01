@@ -43,6 +43,7 @@ type
     FTotal: Double;
     FUltimoNumero: Double;
     procedure Calcular;
+    procedure Limpar;
   public
     { Public declarations }
   end;
@@ -108,6 +109,13 @@ begin
   end;
   edtResultado.Text := FloatToStr(FTotal);
   FUltimoNumero := FTotal;
+end;
+
+procedure TfrmCalculator.Limpar;
+begin
+  FUltimoNumero := 0;
+  edtResultado.Text := '0';
+  FOperacao := '+';
 end;
 
 end.
