@@ -115,7 +115,7 @@ begin
       FTotal := FTotal / StrToFloat(edtResultado.Text);
   end;
   edtResultado.Text := FloatToStr(FTotal);
-  FUltimoNumero := FTotal;
+  FUltimoNumero := 0;
 end;
 
 procedure TfrmCalculator.FormCreate(Sender: TObject);
