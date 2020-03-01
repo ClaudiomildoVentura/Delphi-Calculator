@@ -132,6 +132,7 @@ begin
   FUltimoNumero := 0;
   edtResultado.Text := '0';
   FOperacao := '+';
+  FTotal := 0;
 end;
 
 end.
