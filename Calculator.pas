@@ -40,6 +40,7 @@ type
     { Private declarations }
     FOperacao: String;
     FTotal: Double;
+    FUltimoNumero: Double;
   public
     { Public declarations }
   end;
@@ -53,8 +54,13 @@ implementation
 
 procedure TfrmCalculator.btnGeralClick(Sender: TObject);
 begin
-// TypeCasting para pegar todos os dados dos botões.
-  edtResultado.Text := edtResultado.Text + TButton(Sender).Caption;
+  if FUltimoNumero = 0 then
+    edtResultado.Text := TButton(Sender).Caption
+  else
+    // TypeCasting para pegar todos os dados dos botões.
+    edtResultado.Text := edtResultado.Text + TButton(Sender).Caption;
+
+  FUltimoNumero := StrToFloat(edtResultado.Text);
 end;
 
 procedure TfrmCalculator.btnAdicaoClick(Sender: TObject);
