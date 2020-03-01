@@ -3,7 +3,7 @@ object frmCalculator: TfrmCalculator
   Top = 0
   BorderStyle = bsDialog
   Caption = 'Calculator'
-  ClientHeight = 249
+  ClientHeight = 228
   ClientWidth = 290
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -14,11 +14,12 @@ object frmCalculator: TfrmCalculator
   OldCreateOrder = False
   Position = poDesktopCenter
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object btn7: TButton
     Left = 12
-    Top = 84
+    Top = 77
     Width = 69
     Height = 25
     Caption = '7'
@@ -27,7 +28,7 @@ object frmCalculator: TfrmCalculator
   end
   object btn4: TButton
     Left = 12
-    Top = 132
+    Top = 117
     Width = 69
     Height = 25
     Caption = '4'
@@ -36,7 +37,7 @@ object frmCalculator: TfrmCalculator
   end
   object btn1: TButton
     Left = 12
-    Top = 179
+    Top = 156
     Width = 69
     Height = 25
     Caption = '1'
@@ -45,7 +46,7 @@ object frmCalculator: TfrmCalculator
   end
   object btnLimpar: TButton
     Left = 12
-    Top = 218
+    Top = 195
     Width = 69
     Height = 25
     Caption = 'Limpar'
@@ -54,16 +55,22 @@ object frmCalculator: TfrmCalculator
   end
   object btnAdicao: TButton
     Left = 244
-    Top = 84
+    Top = 77
     Width = 36
     Height = 25
     Caption = '+'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 4
     OnClick = btnAdicaoClick
   end
   object btnSubtracao: TButton
     Left = 244
-    Top = 132
+    Top = 117
     Width = 36
     Height = 25
     Caption = '-'
@@ -72,7 +79,7 @@ object frmCalculator: TfrmCalculator
   end
   object btnMultiplicar: TButton
     Left = 244
-    Top = 179
+    Top = 156
     Width = 36
     Height = 25
     Caption = 'X'
@@ -81,7 +88,7 @@ object frmCalculator: TfrmCalculator
   end
   object btnDividir: TButton
     Left = 244
-    Top = 218
+    Top = 195
     Width = 36
     Height = 25
     Caption = '/'
@@ -99,7 +106,7 @@ object frmCalculator: TfrmCalculator
   end
   object btn8: TButton
     Left = 88
-    Top = 84
+    Top = 77
     Width = 69
     Height = 25
     Caption = '8'
@@ -108,7 +115,7 @@ object frmCalculator: TfrmCalculator
   end
   object btn5: TButton
     Left = 88
-    Top = 132
+    Top = 117
     Width = 69
     Height = 25
     Caption = '5'
@@ -117,7 +124,7 @@ object frmCalculator: TfrmCalculator
   end
   object btn2: TButton
     Left = 88
-    Top = 179
+    Top = 156
     Width = 69
     Height = 25
     Caption = '2'
@@ -126,7 +133,7 @@ object frmCalculator: TfrmCalculator
   end
   object btn0: TButton
     Left = 88
-    Top = 218
+    Top = 195
     Width = 69
     Height = 25
     Caption = '0'
@@ -135,7 +142,7 @@ object frmCalculator: TfrmCalculator
   end
   object btn9: TButton
     Left = 165
-    Top = 84
+    Top = 77
     Width = 69
     Height = 25
     Caption = '9'
@@ -144,7 +151,7 @@ object frmCalculator: TfrmCalculator
   end
   object btn6: TButton
     Left = 165
-    Top = 132
+    Top = 117
     Width = 69
     Height = 25
     Caption = '6'
@@ -153,7 +160,7 @@ object frmCalculator: TfrmCalculator
   end
   object btn3: TButton
     Left = 165
-    Top = 179
+    Top = 156
     Width = 69
     Height = 25
     Caption = '3'
@@ -162,7 +169,7 @@ object frmCalculator: TfrmCalculator
   end
   object btnIgualdade: TButton
     Left = 165
-    Top = 218
+    Top = 195
     Width = 69
     Height = 25
     Caption = '='

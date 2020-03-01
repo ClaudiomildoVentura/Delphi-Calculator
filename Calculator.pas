@@ -38,6 +38,7 @@ type
     procedure btnIgualdadeClick(Sender: TObject);
     procedure btnLimparClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
 
   private
     { Private declarations }
@@ -121,6 +122,11 @@ end;
 procedure TfrmCalculator.FormCreate(Sender: TObject);
 begin
   Limpar;
+end;
+
+procedure TfrmCalculator.FormShow(Sender: TObject);
+begin
+ btn0.SetFocus;
 end;
 
 procedure TfrmCalculator.Limpar;
