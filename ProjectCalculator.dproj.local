@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2020/02/29 15:07:24.756,=C:\Users\claud\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2020/02/29 15:09:03.852,C:\Users\claud\Delphi-Calculator\trunk\Calculator.dfm=C:\Users\claud\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2020/02/29 15:09:03.852,C:\Users\claud\Delphi-Calculator\trunk\Calculator.pas=C:\Users\claud\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2020/02/29 15:09:22.796,C:\Users\claud\Delphi-Calculator\trunk\ProjectCalculator.dproj=C:\Users\claud\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+	<Transactions>
+    <Transaction>2020/02/29 15:07:24.000.756,=C:\Users\claud\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/02/29 15:09:03.000.852,C:\Users\claud\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\claud\Delphi-Calculator\trunk\Calculator.dfm</Transaction>
+    <Transaction>2020/02/29 15:09:03.000.852,C:\Users\claud\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\claud\Delphi-Calculator\trunk\Calculator.pas</Transaction>
+    <Transaction>2020/02/29 15:09:22.000.796,C:\Users\claud\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\claud\Delphi-Calculator\trunk\ProjectCalculator.dproj</Transaction>
   </Transactions>
 </BorlandProject>
