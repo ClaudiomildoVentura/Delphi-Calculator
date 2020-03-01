@@ -41,6 +41,7 @@ type
     FOperacao: String;
     FTotal: Double;
     FUltimoNumero: Double;
+    procedure Calcular;
   public
     { Public declarations }
   end;
@@ -81,6 +82,17 @@ end;
 procedure TfrmCalculator.btnSubtracaoClick(Sender: TObject);
 begin
   FOperacao := '-';
+end;
+
+procedure TfrmCalculator.Calcular;
+begin
+  case FOperacao of
+    '+':  FTotal := FTotal + StrToFloat(edtResultado.Text);
+    '-':  FTotal := FTotal - StrToFloat(edtResultado.Text);
+    '*':  FTotal := FTotal * StrToFloat(edtResultado.Text);
+    '/':  FTotal := FTotal / StrToFloat(edtResultado.Text);
+  end;
+  edtResultado.Text := FloatToStr(FTotal);
 end;
 
 end.
