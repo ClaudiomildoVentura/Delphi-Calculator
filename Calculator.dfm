@@ -81,6 +81,7 @@ object frmCalculator: TfrmCalculator
     Height = 25
     Caption = '/'
     TabOrder = 7
+    OnClick = btnDividirClick
   end
   object edtResultado: TEdit
     Left = 13

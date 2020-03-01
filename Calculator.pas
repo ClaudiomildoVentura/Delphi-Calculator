@@ -33,6 +33,7 @@ type
     procedure btnAdicaoClick(Sender: TObject);
     procedure btnSubtracaoClick(Sender: TObject);
     procedure btnMultiplicarClick(Sender: TObject);
+    procedure btnDividirClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -52,6 +53,11 @@ implementation
 procedure TfrmCalculator.btnAdicaoClick(Sender: TObject);
 begin
    FOperacao:= '+';
+end;
+
+procedure TfrmCalculator.btnDividirClick(Sender: TObject);
+begin
+ FOperacao:= '/';
 end;
 
 procedure TfrmCalculator.btnMultiplicarClick(Sender: TObject);
