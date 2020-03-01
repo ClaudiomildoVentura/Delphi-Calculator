@@ -13,6 +13,23 @@ type
 
 type
   TfrmCalculator  = class(TForm)
+    btn7: TButton;
+    btn4: TButton;
+    btn1: TButton;
+    btnLimpar: TButton;
+    btnMais: TButton;
+    btnMenos: TButton;
+    btnMultiplicar: TButton;
+    btnDividir: TButton;
+    edtResultado: TEdit;
+    btn8: TButton;
+    btn5: TButton;
+    btn2: TButton;
+    btn0: TButton;
+    btn9: TButton;
+    btn6: TButton;
+    btn3: TButton;
+    btnIgualdade: TButton;
 
   private
     { Private declarations }
