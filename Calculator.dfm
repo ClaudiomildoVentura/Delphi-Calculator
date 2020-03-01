@@ -63,6 +63,7 @@ object frmCalculator: TfrmCalculator
     Height = 25
     Caption = '-'
     TabOrder = 5
+    OnClick = btnSubtracaoClick
   end
   object btnMultiplicar: TButton
     Left = 273

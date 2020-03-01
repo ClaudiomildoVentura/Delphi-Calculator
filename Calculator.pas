@@ -31,6 +31,7 @@ type
     btn3: TButton;
     btnIgualdade: TButton;
     procedure btnAdicaoClick(Sender: TObject);
+    procedure btnSubtracaoClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -50,6 +51,11 @@ implementation
 procedure TfrmCalculator.btnAdicaoClick(Sender: TObject);
 begin
    FOperacao:= '+';
+end;
+
+procedure TfrmCalculator.btnSubtracaoClick(Sender: TObject);
+begin
+  FOperacao:= '-';
 end;
 
 end.
