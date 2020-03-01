@@ -17,8 +17,8 @@ type
     btn4: TButton;
     btn1: TButton;
     btnLimpar: TButton;
-    btnMais: TButton;
-    btnMenos: TButton;
+    btnAdicao: TButton;
+    btnSubtracao: TButton;
     btnMultiplicar: TButton;
     btnDividir: TButton;
     edtResultado: TEdit;

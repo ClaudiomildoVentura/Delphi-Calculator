@@ -46,7 +46,7 @@ object frmCalculator: TfrmCalculator
     Caption = 'Limpar'
     TabOrder = 3
   end
-  object btnMais: TButton
+  object btnAdicao: TButton
     Left = 297
     Top = 87
     Width = 43
@@ -54,7 +54,7 @@ object frmCalculator: TfrmCalculator
     Caption = '+'
     TabOrder = 4
   end
-  object btnMenos: TButton
+  object btnSubtracao: TButton
     Left = 297
     Top = 135
     Width = 43
