@@ -13,6 +13,7 @@ object frmCalculator: TfrmCalculator
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object btn7: TButton

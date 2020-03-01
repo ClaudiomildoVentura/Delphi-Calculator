@@ -37,6 +37,7 @@ type
     procedure btnGeralClick(Sender: TObject);
     procedure btnIgualdadeClick(Sender: TObject);
     procedure btnLimparClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
 
   private
     { Private declarations }
@@ -115,6 +116,11 @@ begin
   end;
   edtResultado.Text := FloatToStr(FTotal);
   FUltimoNumero := FTotal;
+end;
+
+procedure TfrmCalculator.FormCreate(Sender: TObject);
+begin
+  Limpar;
 end;
 
 procedure TfrmCalculator.Limpar;
