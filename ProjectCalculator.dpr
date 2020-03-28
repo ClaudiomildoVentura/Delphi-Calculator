@@ -9,6 +9,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  Application.Title := 'Calculator';
   Application.CreateForm(TfrmCalculator, frmCalculator);
   Application.Run;
 end.
